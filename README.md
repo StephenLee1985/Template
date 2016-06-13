@@ -2,7 +2,8 @@
 
 1、环境变量
    在程序初始化时，执行initEnv，如果找不到需要的环境变量，程序退出
-2、log打印
+
+:2、log打印
 
 
 	1、统一采用 github.com/Sirupsen/logrus
