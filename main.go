@@ -43,6 +43,9 @@ func initEnv() {
 
 func main() {
 	initEnv()
+	if os.Getenv("LOG_LEVEL") == "DEBUG" {
+		log.SetLevel(log.DebugLevel)
+	}
 	/*使用log示例*/
 	Test()
 	fmt.Println("birth cry")
