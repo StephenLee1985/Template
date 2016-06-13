@@ -26,13 +26,13 @@ import (
 
 */
 
-func get_info() string {
+func getInfo() string {
 
 	return "iiiiii"
 }
 
-func do_something() error {
-	i := get_info()
+func doSomething() error {
+	i := getInfo()
 
 	/* 如果需要对信息进行记录 可以用log.Debug*/
 
@@ -43,7 +43,7 @@ func do_something() error {
 
 func Test() {
 
-	err := do_something()
+	err := doSomething()
 
 	/*发生错误需要用log.Error打印错误信息*/
 	if err != nil {
