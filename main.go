@@ -11,6 +11,7 @@ type EnvConfig struct {
 	Env1           string
 	Env2           string
 	A_MYSQL_PASSWD string
+	LOG_LEVEL      string
 }
 
 var Env EnvConfig
@@ -36,14 +37,17 @@ func initEnv() {
 		exitMissingEnv("A_MYSQL_PASSWD")
 	}
 
+	LOG_LEVEL := os.Getenv("LOG_LEVEL")
+
 	Env.Env1 = Env1
 	Env.Env2 = Env2
 	Env.A_MYSQL_PASSWD = A_MYSQL_PASSWD
+	Env.LOG_LEVEL = LOG_LEVEL
 }
 
 func main() {
 	initEnv()
-	if os.Getenv("LOG_LEVEL") == "DEBUG" {
+	if Env.LOG_LEVEL == "DEBUG" {
 		log.SetLevel(log.DebugLevel)
 	}
 	/*使用log示例*/
